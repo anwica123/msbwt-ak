@@ -1,4 +1,5 @@
-Installing from a local copy of msbwt-ak in lognleaf
+Installation from a local copy of msbwt-ak on the Longleaf computing environment
+---------------------------------------------------------------------------------
 
 Sometimes, old build can cause problems if not completely removed. So do this before installing:
     Delete any old build artifacts in your package directory
