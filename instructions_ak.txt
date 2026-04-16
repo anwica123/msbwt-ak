@@ -1,0 +1,45 @@
+Sometimes, old build can cause problems if not completely removed. So do this before installing:
+    Delete any old build artifacts in your package directory
+    Go to your old msbwt package directory and run:
+
+rm -rf build dist *.egg-info __pycache__
+
+1. Install msbwt and its dependencies
+
+	Run the following command in your terminal to install msbwt along with required dependencies (numpy, cython, pysam) into a local directory named packages:
+
+	pip install --upgrade -t packages "path/to/msbwt-ak"
+
+	Replace "path/to/msbwt-ak" with the path to the msbwt-ak source code directory.
+
+2. Add the executables and modules to your environment
+
+	Edit your ~/.bashrc file and add the following lines at the end:
+
+	# Add local msbwt install to PATH and PYTHONPATH
+
+	# For msbwt command-line tool
+	export PATH="path/to/your/local/packages/bin:$PATH"
+
+	# For importing Python modules (e.g., import MUS)
+	export PYTHONPATH="path/to/your/local/packages:$PYTHONPATH"
+
+	Replace path/to/your/local/packages with the full path to the packages directory where msbwt was installed.
+
+3. Reload your shell configuration
+
+	Run this command to apply the changes:
+
+	source ~/.bashrc
+
+4. Restart your session (optional but recommended)
+
+	To ensure the changes fully take effect, you may restart your terminal or SSH session.
+
+5. Test the installation
+
+	Verify that the command-line tool is working:
+
+	msbwt -h
+
+You should see the help message for the msbwt command.
