@@ -131,3 +131,4 @@ References
 Holt, James, and Leonard McMillan. "Merging of multi-string BWTs with applications." *Bioinformatics* (2014): btu584.
 
 Holt, James, and Leonard McMillan. "Constructing Burrows-Wheeler transforms of large string collections via merging." *Proceedings of the 5th ACM Conference on Bioinformatics, Computational Biology, and Health Informatics.* ACM, 2014.
+# msbwt-ak
