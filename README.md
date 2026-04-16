@@ -1,3 +1,7 @@
+msbwt-ak is a Python 3–compatible fork of the original MSBWT package by Holt (https://github.com/holtjma/msbwt
+).
+This repository introduces minimal modifications required to ensure compatibility with Python 3 while maintaining the original design and behavior.
+
 Introduction
 ============
 
@@ -30,44 +34,6 @@ Holt, James, and Leonard McMillan. "Merging of multi-string BWTs with applicatio
 Holt, James, and Leonard McMillan. "Constructing burrows-wheeler transforms of large string collections via merging." 
 Proceedings of the 5th ACM Conference on Bioinformatics, Computational Biology, and Health Informatics. ACM, 2014.
 
-System Requirements
-===================
-
-msbwt3 and its modules have been tested under Python 3.8.  The package is distributed without the C files,
-so compilation with Cython is required.
-
-Two Python modules are required to run the code.
-
-[pysam] - Tested with pysam 0.15.3
-
-As a wrapper of Samtools, the pysam module facilitates the manipulation of SAM/BAM files in Python. Its latest 
-package can be downloaded from:
-
-	http://code.google.com/p/pysam/
-
-*NOTE:* As of ```13 January, 2020,``` the PyPi version of pysam does not build for Python 3.8.
-It is recommended to clone the github repository
-
-    https://github.com/pysam-developers/pysam
-	
-and execute
-
-```pip install .```
-
-in the resulting directory.
-
-[argparse] - Tested with argparse 1.2.1
-
-The argparse module is used to parse the command line arguments of the module. It has been maintained in Python 
-Standard Library since Python 2.7.  Its latest package can be downloaded from:
-
-	http://code.google.com/p/argparse/
-
-[numpy] - Tested with numpy 1.18.1
-
-The numpy module provide various fast numerical functions for Python.  Its latest package can be downloaded from:
-
-	http://www.numpy.org
 
 Installation
 ============
