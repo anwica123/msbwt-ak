@@ -34,26 +34,6 @@ Holt, James, and Leonard McMillan. "Merging of multi-string BWTs with applicatio
 Holt, James, and Leonard McMillan. "Constructing burrows-wheeler transforms of large string collections via merging." 
 Proceedings of the 5th ACM Conference on Bioinformatics, Computational Biology, and Health Informatics. ACM, 2014.
 
-
-Installation
-============
-
-It is recommended to use pip to install this package.
-This can be done by cloning the repository, and then executing the pip command within.
-```shell
-git clone https://github.com/funkshun/msbwt3 && cd msbwt3
-pip install .
-```
-*NOTE*: This process will attempt to install the PyPi version of pysam.
-If this version is still broken, follow the above instructions to install it prior to installing msbwt3.
-
-By default, the package will be installed under the directory of Python dist-packages, and the executable of 
-msbwt can be found under '/usr/local/bin/'.
-
-If you don't have permission to install it in the system-owned directory, you can install it locally by appending
-```--user``` to any pip install commands:
-
-
 Detailed Description
 ===========
 
