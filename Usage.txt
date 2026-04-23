@@ -20,7 +20,7 @@ Using BWT
 	msbwt3 /path/to/the/msbwt/directory kmer
 
 	example command:
-	msbwt3 data/small_bwt "ACGT"
+	msbwt3 query data/small_bwt "ACGT"
 	should output for the given small_bwt: Forward: 2167, Reverse: 2167, Total: 4334
 
 	2. For massquery (query a list of kmers in a single msbwt):
