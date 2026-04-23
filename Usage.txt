@@ -1,0 +1,69 @@
+Building BWT
+=============
+
+For Building an MSBWT, run the build_bwt.sh
+
+/path/to/build_bwt.sh /path/to/short/reads /path/to/output/directory
+a new directory with the specified output one will be created 
+
+example:
+data/build_bwt.sh data/small_fastq data/bwt_from_small_fastq
+
+Using BWT
+=============
+
+	Command Line
+	--------------
+
+	1. For a single kmer query:
+
+	msbwt3 /path/to/the/msbwt/directory kmer
+
+	example command:
+	msbwt3 data/small_bwt "ACGT"
+	should output for the given small_bwt: Forward: 2167, Reverse: 2167, Total: 4334
+
+	2. For massquery (query a list of kmers in a single msbwt):
+
+	msbwt3 massquery data/small_bwt data/kmers.csv
+
+
+	Python API
+	=============
+	import the package, create msbwt instance
+	
+	import MUSCython.MultiStringBWTCython as MultiStringBWT
+	msbwt = MultiStringBWT.loadBWT('/path/to/directory')
+
+	1. find the occurnace of a single kmer:
+	
+	kmer  = 'CAT'
+	msbwt.countOccurrencesOfSeq(kmer.encode())
+	
+	2. Reverse complement a kmer:
+	rev_kmer = MultiStringBWT.reverseComplement(kmer)
+	
+	3. Find the range of indices of a kmer
+	
+	msbwt = MultiStringBWT.loadBWT('/path/to/directory')
+	kmer  = 'CAT'
+	lo1,hi1 = msbwt.findIndicesOfStr(kmer.encode())
+	
+	for revererse complement:
+	lo2,hi2 = msbwt.findIndicesOfStr(MultiStringBWT.reverseComplement(kmer).encode())
+	
+	total occurnace of a kmer can also be counted from these indices:
+	total = hi1-lo1+hi2-lo2
+	
+	4. Extract all the reads containing a kmer:
+	lo1, hi1 = msbwt.findIndicesOfStr(kmer.encode())
+	lo2, hi2 = msbwt.findIndicesOfStr(MultiStringBWT.reverseComplement(kmer).encode())
+	fwd_ind = list(range(lo1,hi1))
+	rev_ind = list(range(lo2,hi2))
+	total = hi1-lo1+hi2-lo2
+
+    forwardList = [msbwt.recoverString(i) for i in fwd_ind] #recover the original read given the bwt index
+    reverseList = [MultiStringBWT.reverseComplement(msbwt.recoverString(i).decode()) for i in rev_ind]
+	
+	
+	
