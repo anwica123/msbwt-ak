@@ -25,7 +25,7 @@ Using BWT
 
 	2. For massquery (query a list of kmers in a single msbwt):
 
-	msbwt3 massquery data/small_bwt data/kmers.csv
+	msbwt3 massquery data/small_bwt data/kmers.csv data/output.csv
 
 
 	Python API
